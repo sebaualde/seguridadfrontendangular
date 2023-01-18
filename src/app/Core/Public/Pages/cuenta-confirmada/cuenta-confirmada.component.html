@@ -1,0 +1,23 @@
+<div class="container animate fadeIn">
+  <ng-container *ngIf="isSuccess; else elseBlock">
+
+    <app-info-page-message [iconName]="'mark_email_read'" [title]="'Correo verificado'" [alertType]="'alert-success'"
+      [message]="'<b>Verificación exitosa!!!</b><br> Gracias por confirmar tu cuenta, ya puedes loguearte en el sistema.'">
+    </app-info-page-message>
+
+    <div class="text-center">
+      <button [routerLink]="'/'+routes.Login" mat-raised-button color="primary">Ir a Login</button>
+    </div>
+
+  </ng-container>
+
+  <ng-template #elseBlock>
+
+    <app-info-page-message [iconName]="'sms_failed'" [title]="'Confirmación fallida'" [alertType]="'alert-danger'"
+      [message]="'<b>Error!!! Ocurrió un error al confirmar tu
+      cuenta.</b> <br> Puedes intentarlo nuevamente o ponerte en contácto con un administrador para solicionar el
+    problema.'">
+    </app-info-page-message>
+
+  </ng-template>
+</div>

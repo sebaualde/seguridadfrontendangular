@@ -1,0 +1,17 @@
+{
+    "exportall.config.folderListener": [
+        "/src/app/Core/Public",
+        "/src/app/Core",
+        "/src/app/Core/Public/Pages",
+        "/src/app/Core/Private/Pages",
+        "/src/app/Core/Private",
+        "/src/app/Core/Private/Modules",
+        "/src/app/Core/Private/Modules/categorias/Modules",
+        "/src/app/Core/Shared",
+        "/src/app/Security",
+        "/src/app/Security/Services",
+        "/src/app/Core/Private/Pages/cuenta/Pages",
+        "/src/app/Core/Private/Pages/administracion",
+        "/src/app/Core/Private/Pages/administracion/Pages"
+    ]
+}

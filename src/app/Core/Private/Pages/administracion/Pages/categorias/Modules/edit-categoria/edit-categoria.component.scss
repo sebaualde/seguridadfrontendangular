@@ -1,0 +1,94 @@
+.editar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  min-height: 92vh;
+}
+
+.imagen {
+  width: clamp(100px, 10vw, 200px);
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border-radius: 10px;
+  height: 100%;
+}
+
+.btns-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.z-depth-1 {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 0.4rem;
+}
+
+:host::ng-deep .mat-form-field-type-mat-date-range-input .mat-form-field-infix {
+  width: auto;
+}
+
+.header-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #3f51b5;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.icon-home {
+  color: white;
+  font-size: clamp(4.5rem, 8vw, 14rem);
+  width: clamp(4.5rem, 8vw, 14rem);
+  height: clamp(4.5rem, 8vw, 14rem);
+  border-radius: 50%;
+  background-color: transparent;
+}
+
+.title {
+  font-family: "Consolas";
+  font-size: clamp(2rem, 3vw, 5rem);
+  padding: 1rem;
+  color: #3f51b5;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0 0 1rem 0;
+}
+
+.btn-restore {
+  cursor: pointer;
+  color: #3f51b5;
+}
+.btn-restore:hover {
+  color: blue;
+}
+
+.spinner{
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}

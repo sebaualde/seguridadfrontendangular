@@ -1,0 +1,14 @@
+<mat-drawer-container class="sidenav-container">
+  <mat-drawer mode="side" opened>
+    <div class="btn-container">
+      <p class="text-center alert-success p-2 rounded">{{user}}</p>
+      <button [routerLink]="'/'+routes.Cuenta" mat-stroked-button>Inicio</button>
+
+      <button [routerLink]="routes.CuentaCategorias" mat-stroked-button>Categorías</button>
+      <button [routerLink]="routes.CambiarPassword" mat-stroked-button>Cambiar password</button>
+    </div>
+  </mat-drawer>
+  <mat-drawer-content>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

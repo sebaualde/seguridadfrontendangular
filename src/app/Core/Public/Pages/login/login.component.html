@@ -1,0 +1,161 @@
+<div class="container animate fadeIn">
+
+  <div class="login mb-4">
+    <div class="form-container z-depth-1">
+      <div class="header-container">
+        <div class="icon-container">
+          <mat-icon class="icon-home">key</mat-icon>
+        </div>
+        <span class="title">Login</span>
+      </div>
+
+      <ng-container *ngIf="isLoading">
+        <div class="spinner">
+          <mat-spinner></mat-spinner>
+        </div>
+      </ng-container>
+
+      <span *ngIf="mensaje" class="alert-success p-2 rounded text-center mb-4">{{mensaje}}</span>
+
+      <app-show-error-list [errores]="errores"></app-show-error-list>
+
+      <form id="loginForm" (submit)="onSubmit()" [formGroup]="form">
+
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input type="email" formControlName="email" matInput />
+          <mat-error>{{obtenerMensajeErrorEmail()}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input id="pass" type="password" formControlName="password" matInput />
+          <a matSuffix mat-icon-button aria-label="Clear" (click)="showPass()">
+            <mat-icon>{{passIcon}}</mat-icon>
+          </a>
+          <mat-error>El campo de Password es requerido</mat-error>
+        </mat-form-field>
+
+        <div class="recuerdame">
+          <mat-checkbox formControlName="recuerdame" class="example-margin" [checked]="false" [color]="'primary'">
+            Recuerdame
+          </mat-checkbox>
+          <a class="btn-restore" (click)="selectPage(routes.RecuperarPassword)">Olvidates tu contraseña?</a>
+        </div>
+      </form>
+
+      <div class="btns-container">
+        <button class="me-2" (click)="selectPage(routes.Registro)" mat-flat-button color="primary">
+          Registrate
+        </button>
+        <div>
+
+          <button class="me-2" type="submit" form="loginForm" mat-flat-button class="btn-ingresar"
+            [disabled]="form!.invalid">
+            Ingresar
+          </button>
+          <a mat-stroked-button (click)="selectPage(routes.Inicio)">Cancelar</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="table-responsive">
+    <table class="table table-striped table-sm">
+      <thead>
+        <tr class="table-dark">
+          <td class="text-center" colspan="3">CREDENCIALES POR DEFECTO</td>
+        </tr>
+        <tr class="header">
+          <td>Email</td>
+          <td class="pass">Password</td>
+          <td>Nivel</td>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- admin -->
+        <tr class="admin">
+          <td>
+            <div class="celda">
+              <a class="copy-clipboard" (click)="copyToClipboard('admin@yopmail.com', 'copy-m1')"
+                matTooltip="Copiar">admin@yopmail.com</a>
+              <div class="icon-copy-container" hidden id="copy-m1">
+                <mat-icon class="copy">check_circle</mat-icon>
+                copiado
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="celda">
+              <a class="copy-clipboard" (click)="copyToClipboard('123456', 'copy-p1')" matTooltip="Copiar">123456</a>
+              <div class="icon-copy-container" hidden id="copy-p1">
+
+                <mat-icon class="copy">check_circle</mat-icon>
+                copiado
+              </div>
+
+            </div>
+          </td>
+          <td>
+            Autenticado y Autorizado (Admin)
+          </td>
+        </tr>
+        <!-- registrado -->
+        <tr class="registrado">
+          <td>
+            <div class="celda" >
+              <a class="copy-clipboard" (click)="copyToClipboard('cliente@yopmail.com', 'copy-m2')"
+                matTooltip="Copiar">cliente@yopmail.com</a>
+              <div class="icon-copy-container" hidden id="copy-m2">
+
+                <mat-icon class="copy">check_circle</mat-icon>
+                copiado
+              </div>
+
+            </div>
+          </td>
+          <td>
+            <div class="celda">
+              <a class="copy-clipboard" (click)="copyToClipboard('123456', 'copy-p2')" matTooltip="Copiar">123456</a>
+              <div class="icon-copy-container" hidden id="copy-p2">
+
+                <mat-icon class="copy">check_circle</mat-icon>
+                copiado
+              </div>
+
+            </div>
+          </td>
+          <td>Autenticado</td>
+        </tr>
+        <!-- no confirmado -->
+        <tr class="no-conrifm">
+          <td>
+            <div class="celda">
+              <a class="copy-clipboard" (click)="copyToClipboard('clienteNoConfirmado@yopmail.com', 'copy-m3')"
+                matTooltip="Copiar">clienteNoConfirmado@yopmail.com</a>
+              <div class="icon-copy-container" hidden id="copy-m3">
+
+                <mat-icon class="copy">check_circle</mat-icon>
+                copiado
+              </div>
+
+            </div>
+          </td>
+          <td>
+            <div class="celda">
+              <a class="copy-clipboard" (click)="copyToClipboard('123456', 'copy-p3')" matTooltip="Copiar">123456</a>
+              <div class="icon-copy-container" hidden id="copy-p3">
+
+                <mat-icon class="copy">check_circle</mat-icon>
+                copiado
+              </div>
+
+            </div>
+          </td>
+          <td>No confirmado (visitante)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>

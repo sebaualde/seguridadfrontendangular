@@ -1,0 +1,5 @@
+<div *ngIf="errores.length > 0" class="alert-danger p-2 rounded mb-4">
+  <ul class="mb-0">
+      <li *ngFor="let error of errores">{{error}}</li>
+  </ul>
+</div>

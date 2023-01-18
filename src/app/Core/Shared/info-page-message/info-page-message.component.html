@@ -1,0 +1,17 @@
+<div class="container">
+
+  <div class="header-container">
+    <div class="icon-container">
+      <mat-icon class="icon">{{iconName}}</mat-icon>
+    </div>
+  </div>
+
+  <span class="title">{{title}}</span>
+
+  <ng-container *ngIf="message">
+
+    <span id="message" class="{{alertType}} p-2 rounded text-center col-md-6 " [innerHTML]="message"></span>
+
+  </ng-container>
+
+</div>

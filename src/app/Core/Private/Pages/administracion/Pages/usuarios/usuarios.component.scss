@@ -1,0 +1,43 @@
+.table-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+.title {
+  font-family: "Consolas";
+  font-size: clamp(2rem, 3vw, 5rem);
+  padding: 1rem;
+  color: #3f51b5;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0;
+  margin-top: 1rem;
+}
+
+
+.color-green{
+  color: green;
+}
+
+.color-red{
+  color: red;
+}
+
+th{
+  background-color: rgba(0, 0, 0, 0.452);
+  color: white;
+}
+
+.spinner-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.spinner-container p {
+  margin-top: 1rem;
+}

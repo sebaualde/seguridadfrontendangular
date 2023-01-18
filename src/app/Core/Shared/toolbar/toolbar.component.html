@@ -1,0 +1,38 @@
+<p>
+  <mat-toolbar color="primary">
+    <span class="me-3">Seguridad Demo</span>
+
+    <button [routerLink]="routePages.Inicio" mat-icon-button class="">
+      <mat-icon class="icon-home">home</mat-icon>
+    </button>
+
+    <span class="spacer"></span>
+
+    <div class="user-level {{bgLevel}}">Nivel: {{estadoUsuario}}</div>
+
+    <span class="spacer"></span>
+
+    <div class="menu-opciones">
+
+      <button [routerLink]="routePages.ErrorTests" mat-flat-button class="menu-btn">
+        Test Errores
+      </button>
+
+      <button *ngIf="isLogged" [routerLink]="routePages.Cuenta" mat-flat-button class="menu-btn">
+        Mi cuenta
+      </button>
+
+      <button *ngIf="isAutorizado"  [routerLink]="routePages.Administracion" mat-flat-button class="menu-btn">
+        Administración
+      </button>
+
+      <button *ngIf="isLogged"  (click)="logout()" mat-flat-button class="menu-btn">
+        Logout
+      </button>
+
+      <button *ngIf="!isLogged" [routerLink]="routePages.Login" mat-flat-button class="menu-btn">
+        Login
+      </button>
+    </div>
+  </mat-toolbar>
+</p>

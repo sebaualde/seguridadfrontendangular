@@ -1,0 +1,18 @@
+<div class="container animate fadeIn">
+
+  <ng-container *ngIf="isSuccess; else elseBlock">
+    <app-info-page-message [iconName]="'how_to_reg'" [title]="'registro exitoso'" [alertType]="'alert-success'"
+      [message]="'Gracias por registrate!!!. Para confirmar tu cuenta revisa el <b>correo que te
+    enviamos</b>  y utiliza el <b>link para activar tu usuario</b>  y poder loguearte en el sistema.'">
+    </app-info-page-message>
+  </ng-container>
+
+  <ng-template #elseBlock>
+
+    <app-info-page-message [iconName]="'help'" [title]="'Petición no encontrada'" [alertType]="'alert-danger'"
+      [message]="'<b>Error!!!</b> No se encontro ninguna petición de registro.'">
+    </app-info-page-message>
+
+  </ng-template>
+
+</div>

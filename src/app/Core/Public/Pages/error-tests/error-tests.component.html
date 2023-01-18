@@ -1,0 +1,75 @@
+<div class="container animate fadeIn">
+
+  <div class="descripcion">
+    <h1 class="title">Test de Errores</h1>
+
+    <div class="alert-info col-md-8 offset-md-2 p-2 rounded">
+
+      <p>Aquí puedes probar las páginas de recepción de errores solicitando el que equieras a través del formulario.</p>
+      <span>Si el <b>error es específico</b>, seras <b>redirigido su página</b>, de lo contrario seras redirigido a la
+        <b>página 404.</b>
+      </span>
+    </div>
+
+    <div class="error-types d-md-flex mt-4">
+
+      <div class="me-md-3">
+
+        <h3 class="alert-danger mb-0">Errores del cliente</h3>
+        <ul class="ul">
+          <li><b>400</b> - BadRequest <span class="alert-success rounded p-1">(<b>se queda en su página</b> y presenta
+              los errores)</span> </li>
+          <li><b>401</b> - Unauthorized <span class="alert-success rounded p-1">(Redirige a página
+              <b>Unauthorized</b>)</span></li>
+          <li><b>403</b> - Forbiden <span class="alert-success rounded p-1">(Redirige a página
+              <b>Unauthorized</b>)</span></li>
+          <li><b>404</b> - NotFound <span class="alert-success rounded p-1">(Redirige a página <b>NotFound</b>)</span>
+          </li>
+          <li><b>405</b> - MethodNotAllowed <span class="alert-success rounded p-1">(Redirige a página
+              <b>NotFound</b>)</span></li>
+        </ul>
+      </div>
+
+      <div>
+
+        <h3 class="alert-danger mb-0">Errores de Servidor</h3>
+        <ul class="ul">
+          <li><b>500</b> - InternalServerError <span class="alert-success rounded p-1">(Redirige a página
+              <b>ServerError</b>)</span></li>
+          <li><b>503</b> - ServiceUnavailable <span class="alert-success rounded p-1">(Redirige a página
+              <b>ServerError</b>)</span></li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="form-container">
+
+    <app-show-error-list [errores]="errores"></app-show-error-list>
+
+    <form id="errorForm" class="from d-md-flex" (submit)="onSubmit()" [formGroup]="form">
+
+      <mat-form-field appearance="outline" class="me-md-4">
+        <mat-label>Ingresa un Error</mat-label>
+        <input type="number" formControlName="error" matInput />
+        <mat-error>{{obtenerMensajeErrorCode()}}</mat-error>
+      </mat-form-field>
+
+      <div class="btn-Container">
+        <button color="primary" type="submit" mat-flat-button class="btn-solicitar" [disabled]="form!.invalid">
+          Solicitar Error
+        </button>
+
+        <ng-container *ngIf="isLoading">
+          <div class="spinner ms-3">
+            <mat-spinner [diameter]="30"></mat-spinner>
+          </div>
+        </ng-container>
+      </div>
+    </form>
+
+  </div>
+</div>

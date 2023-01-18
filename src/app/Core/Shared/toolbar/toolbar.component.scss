@@ -1,0 +1,53 @@
+.titulo {
+  text-decoration: none;
+  color: white;
+  padding: 1rem;
+  :hover {
+    transition: 0.3s ease-in-out;
+    color: rgb(255, 196, 0);
+  }
+}
+
+.icon-home:hover {
+  transition: 0.3s ease-in-out;
+  color: rgb(255, 196, 0);
+}
+.spacer {
+  flex: 1 1 auto;
+}
+
+.menu-opciones {
+  display: flex;
+  gap: 10px;
+}
+
+p {
+  margin: 0;
+}
+
+
+button:hover{
+  transition: 0.3s ease-in-out;
+  background-color: #eeeded;
+  color: blue;
+}
+
+.user-level {
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  border: 2px solid;
+}
+
+.bg-red{
+background-color: #f00;
+}
+
+.bg-green{
+  background-color: #00b050;
+
+}
+
+.bg-blue{
+  background-color: #4672c4;
+
+}

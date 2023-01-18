@@ -1,0 +1,63 @@
+.img-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.title {
+  font-family: "Consolas";
+  font-size: clamp(2rem, 2vw, 5rem);
+  line-height: 2.5rem;
+  padding: 1rem;
+  color: #3f51b5;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.access-img{
+  width:  clamp(100px, 60vw, 700px);
+}
+
+.info-container{
+  display: flex;
+  justify-content: center;
+}
+
+.descripcion{
+  padding: 1rem;
+}
+
+li{
+  padding: 0.2rem;
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+}
+
+.alert-blue{
+  color: #4f56b3;
+  background-color: #0070ff3d;
+  padding: 0.3rem 0.8rem;
+}
+
+.alert-green{
+  color: #35642b;
+  background-color: #3eb03e5c;
+  padding: 0.3rem 0.8rem;
+}
+
+.alert-red{
+  color: #642b2b;
+  background-color: #ffbebe;
+  padding: 0.3rem 0.8rem;
+}
+
+.divider-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.divider{
+
+  max-width: 50vw;
+}

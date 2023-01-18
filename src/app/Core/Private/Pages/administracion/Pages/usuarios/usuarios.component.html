@@ -1,0 +1,110 @@
+<app-show-message [message]="message" [isErrorMessage]="isErrorMessage"></app-show-message>
+
+<h1 class="title animate fadeInLeft">Usuarios del sistema</h1>
+
+<!-- contenido -->
+<div class="table-container animate fadeInLeft">
+
+  <!-- spiner de carga -->
+  <ng-container *ngIf="datosCargados; else elseCargarDatos">
+    <div class="mat-elevation-z8 " contenido>
+
+      <table class="table-striped overflow-auto" mat-table [dataSource]="usuariosData" matSort
+        (matSortChange)="ordenarData($event)">
+
+
+        <!-- Email -->
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
+          <td class="text-left" mat-cell *matCellDef="let element">
+            {{element.email}}
+          </td>
+        </ng-container>
+
+        <!-- email Confirmed -->
+        <ng-container matColumnDef="emailConfirmed">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Email Confirmado?</th>
+          <td mat-cell *matCellDef="let element" class="text-center">
+
+            <ng-container *ngIf="element.emailConfirmed; else confirmTemplate">
+              <span class="material-icons color-green">
+                done
+              </span>
+            </ng-container>
+            <ng-template #confirmTemplate>
+              <span class="material-icons color-red">
+                close
+              </span>
+            </ng-template>
+          </td>
+        </ng-container>
+
+        <!-- Teléfono -->
+        <ng-container matColumnDef="phoneNumber">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Teléfono</th>
+          <td mat-cell *matCellDef="let element">
+            {{element.phoneNumber}}
+          </td>
+        </ng-container>
+
+        <!-- Teléfono -->
+        <ng-container matColumnDef="isAdmin">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Es Admin?</th>
+          <td mat-cell *matCellDef="let element" class="text-center">
+
+
+            <ng-container *ngIf="element.isAdmin; else noAdmin">
+              <span class="alert-success p-1 px-2 rounded">
+                <b>SI</b>
+              </span>
+            </ng-container>
+            <ng-template #noAdmin>
+              <span class="alert-warning p-1 px-2 rounded">
+                <b>NO</b>
+              </span>
+            </ng-template>
+
+          </td>
+        </ng-container>
+
+        <!-- acciones -->
+        <ng-container matColumnDef="acciones">
+          <th mat-header-cell *matHeaderCellDef> Acciones </th>
+          <td mat-cell *matCellDef="let element" class="text-center">
+
+            <div>
+              <a matSuffix mat-icon-button matTooltip="Agregar Admin" (click)="fireAddAdminDialog(element.id)">
+                <span class="material-icons color-green">
+                  add_circle_outline
+                </span>
+              </a>
+
+              <a matSuffix mat-icon-button matTooltip="Remover Admin " (click)="fireRemoveAdminDialog(element.id)">
+                <span class="material-icons color-red">
+                  highlight_off
+                </span>
+              </a>
+
+            </div>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="columnasParaMostrar" class="text-center"></tr>
+        <tr mat-row *matRowDef="let row; columns: columnasParaMostrar;"></tr>
+      </table>
+      <span *ngIf="usuariosData.length <= 0">
+        <p class="alert-info rounded p-4 mb-0 text-center">No hay datos disponibles</p>
+      </span>
+      <mat-paginator #paginatorUsers showFirstLastButtons [pageSizeOptions]="[10, 20, 50]"
+        [length]="cantidadTotalDeRegistros" [pageSize]="recordsPorPagina"
+        (page)="actualizarPaginacion($event)"></mat-paginator>
+    </div>
+  </ng-container>
+  <ng-template #elseCargarDatos>
+    <div class="spinner-container">
+      <mat-spinner></mat-spinner>
+      <p>Cargando datos...</p>
+    </div>
+  </ng-template>
+
+</div>

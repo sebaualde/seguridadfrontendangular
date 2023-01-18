@@ -1,0 +1,24 @@
+<!-- comprobacion de error de conexion -->
+<ng-container *ngIf="isError; else elseCorrectConexion">
+  <div class="d-flex justify-content-center">
+      <p class="alert-danger p-2 text-center rounded my-3 col-5">{{errores}}</p>
+  </div>
+</ng-container>
+<ng-template #elseCorrectConexion>
+
+  <!-- spiner de carga -->
+  <ng-container *ngIf="datosCargados; else elseCargarDatos ">
+
+      <ng-content select="[contenido]"></ng-content>
+
+  </ng-container>
+  <ng-template #elseCargarDatos>
+
+      <div class="spinner-container">
+          <mat-spinner></mat-spinner>
+          <p>Cargando datos...</p>
+      </div>
+
+  </ng-template>
+
+</ng-template>

@@ -1,0 +1,37 @@
+<app-show-message [message]="message" [isErrorMessage]="isErrorMessage"></app-show-message>
+
+<div class="editar-container  animate fadeInLeft">
+
+  <h1 class="title">Modificar Categoría "{{categoriaModel.nombre}}"</h1>
+
+  <div class="form-container z-depth-1">
+
+    <ng-container *ngIf="isLoading">
+      <div class="spinner">
+        <mat-spinner></mat-spinner>
+      </div>
+    </ng-container>
+
+    <app-show-error-list [errores]="errores"></app-show-error-list>
+
+    <form id="editForm" (submit)="onSubmit()" [formGroup]="form">
+
+      <mat-form-field appearance="outline">
+        <mat-label>Nombre</mat-label>
+        <input formControlName="nombre" matInput />
+        <mat-error>{{obtenerMensajeErrorNombre()}}</mat-error>
+      </mat-form-field>
+
+    </form>
+
+    <div class="btns-container">
+
+      <button class="me-2" type="submit" form="editForm" mat-flat-button color="primary" [disabled]="form!.invalid">
+        Agregar
+      </button>
+      <a mat-stroked-button [routerLink]="'../../'">Volver</a>
+
+    </div>
+
+  </div>
+</div>

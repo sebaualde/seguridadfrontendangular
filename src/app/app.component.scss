@@ -1,0 +1,35 @@
+
+.titulo{
+  text-decoration: none;
+  color: white;
+  padding: 1rem;
+  :hover{
+    transition: 0.3s ease-in-out;
+    color: rgb(255, 196, 0);
+  }
+}
+
+.icon-home:hover{
+  transition: 0.3s ease-in-out;
+  color: rgb(255, 196, 0);
+
+}
+.spacer {
+  flex: 1 1 auto;
+}
+
+.menu-opciones{
+  display: flex;
+  gap: 10px;
+}
+
+.toolb{
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
+.body{
+  margin-top: 64px;
+  min-height: 100vh -64px;
+}

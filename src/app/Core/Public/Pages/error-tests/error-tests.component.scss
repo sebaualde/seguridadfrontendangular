@@ -1,0 +1,61 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 90vh;
+  padding: 1rem;
+}
+
+.title {
+  font-family: "Consolas";
+  font-size: clamp(2rem, 3vw, 5rem);
+  padding: 1rem;
+  color: #3f51b5;
+  text-transform: uppercase;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border-radius: 10px;
+  height: 100%;
+}
+
+.from {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.btn-Container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.error-types {
+  justify-content: center;
+}
+
+.descripcion {
+  text-align: center;
+}
+
+.ul {
+  padding: 1rem;
+  list-style-type: none;
+  text-align: left;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #F8D7DA;
+  border-left: 1px solid #F8D7DA;
+  border-right: 1px solid #F8D7DA;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+
+}
+
+li {
+  margin-bottom: 1rem;
+}

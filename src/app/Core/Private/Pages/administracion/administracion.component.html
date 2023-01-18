@@ -1,0 +1,17 @@
+<mat-drawer-container class="sidenav-container">
+  <mat-drawer mode="side" opened>
+    <div class="btn-container">
+      <p class="text-center alert-success p-2 rounded">Administración</p>
+      <button [routerLink]="'/'+routes.Administracion" mat-stroked-button>Inicio</button>
+
+      <button [routerLink]="routes.Categorias" mat-stroked-button>Categorías</button>
+      <button [routerLink]="routes.Usuarios" mat-stroked-button>Usuarios</button>
+    </div>
+  </mat-drawer>
+  <mat-drawer-content>
+    <div class="animate fadeIn">
+      <router-outlet></router-outlet>
+
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>
